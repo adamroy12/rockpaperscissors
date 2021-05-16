@@ -5,9 +5,9 @@ feature 'playerchoicepage' do
   end
 
   scenario 'it presents the player with the choices, rock, paper, and scissors' do
-    visit '/playerchoice'
-    expect(page).to have_button(value: 'Rock')
-    expect(page).to have_button(value: 'Paper')
-    expect(page).to have_button(value: 'Scissors')
+    sign_in
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
 end
