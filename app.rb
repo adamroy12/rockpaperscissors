@@ -12,8 +12,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/playerchoice' do
-    @name = params[:name]
+    $name = params[:name]
+    @name = $name
     erb(:playerchoice)
+  end
+
+  get '/endgame' do
+    @player_choice = params[:player_choice]
+    @name = $name
+    erb(:endgame)
   end
 
   run! if app_file == $0
