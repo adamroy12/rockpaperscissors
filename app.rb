@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:home)
   end
 
-  get '/playerchoice' do
+  post '/playerchoice' do
     @name = params[:name]
     erb(:playerchoice)
   end
