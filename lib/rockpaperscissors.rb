@@ -9,17 +9,17 @@ class Game
   end
 
   def run 
-    if (@player_choice == 'Rock' && @computer_move == 'Scissors') ||
-      (@player_choice == 'Scissors' && @computer_move == 'Paper') ||
-      (@player_choice == 'Paper' && @computer_move == 'Rock')
+    if (@player_choice == 'Rock' && computer_move == 'Scissors') ||
+      (@player_choice == 'Scissors' && computer_move == 'Paper') ||
+      (@player_choice == 'Paper' && computer_move == 'Rock')
       @winner = 'player'
       
-    elsif (@player_choice == 'Rock' && @computer_move == 'Paper') ||
-      (@player_choice == 'Scissors' && @computer_move == 'Rock') ||
-      (@player_choice == 'Paper' && @computer_move == 'Scissors')
+    elsif (@player_choice == 'Rock' && computer_move == 'Paper') ||
+      (@player_choice == 'Scissors' && computer_move == 'Rock') ||
+      (@player_choice == 'Paper' && computer_move == 'Scissors')
       @winner = 'computer'
 
-    elsif (@player_choice == @computer_move)
+    elsif (@player_choice == computer_move)
       @winner = 'neither'
     end
   end
