@@ -1,3 +1,4 @@
+require './lib/rockpaperscissors.rb'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader' if development?
@@ -17,7 +18,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:playerchoice)
   end
 
-  get '/endgame' do
+  post '/endgame' do
+    @game = Game.new(params[:player_choice])
+    @game.computer_move
+    @game.run
     @player_choice = params[:player_choice]
     @name = $name
     erb(:endgame)
